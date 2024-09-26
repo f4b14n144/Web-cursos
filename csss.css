@@ -1,0 +1,111 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+header {
+    display: flex;
+    flex-direction: column;       /* Apilar los elementos verticalmente */
+    align-items: center;          /* Centrar horizontalmente */
+    padding: 20px;                /* Espaciado interno */
+    background-color: #333;       /* Color de fondo */
+    color: #fff;                  /* Color del texto */
+}
+
+header h1 {
+    font-size: 36px;              /* Tamaño de fuente del título */
+    margin: 0;                    /* Eliminar margen adicional */
+    text-align: center;           /* Asegurarse de que el texto esté centrado */
+}
+
+header nav {
+    margin-top: 10px;             /* Espacio entre el título y los enlaces de navegación */
+}
+
+header nav a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    margin: 0 10px;               /* Espaciado horizontal entre enlaces */
+}
+
+header nav a:hover {
+    color: #ddd;                  /* Efecto al pasar el mouse */
+}
+
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Sección de los cursos */
+.courses-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.courses-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+/* Tarjetas de los cursos */
+.course-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 200px;
+    margin: 10px;
+    transition: transform 0.3s ease;
+}
+
+.course-card:hover {
+    transform: translateY(-10px);
+}
+
+/* Imagen de fondo para cada tarjeta */
+.course-image {
+    height: 100px;
+    background-size: cover;
+    background-position: center;
+}
+
+.programacion {
+    background-color: #f26d5b;
+}
+
+.sistemas {
+    background-color: #4aa0d9;
+}
+
+.redes {
+    background-color: #f5b447;
+}
+
+.gestion {
+    background-color: #50d195;
+}
+
+/* Información de los cursos */
+.course-info {
+    padding: 15px;
+    text-align: center;
+}
+
+.course-info p {
+    color: #888;
+    margin: 0;
+}
+
+.course-info h3 {
+    font-size: 16px;
+    color: #333;
+    margin: 5px 0 0 0;
+}
