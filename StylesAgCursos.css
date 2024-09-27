@@ -1,0 +1,65 @@
+
+/* Estilos del formulario */
+h1{
+    text-align: center;
+}
+form {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+}
+form input, form textarea {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 16px;
+}
+form button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+form button:hover {
+    background-color: #218838;
+}
+/* Estilos de la lista de cursos */
+.courses-list {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+}
+.course-item {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin: 10px 0;
+    background-color: #fff;
+}
+#message {
+    display: none;
+    color: #fff;
+    background-color: #28a745;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+#message.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#message.hide {
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
