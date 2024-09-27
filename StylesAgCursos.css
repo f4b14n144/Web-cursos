@@ -26,7 +26,7 @@ form button {
 form button:hover {
     background-color: #218838;
 }
-/* Estilos de la lista de cursos */
+
 .courses-list {
     margin: 20px;
     padding: 20px;
@@ -40,7 +40,7 @@ form button:hover {
     background-color: #fff;
 }
 #message {
-    display: none;
+    opacity: 0;
     color: #fff;
     background-color: #28a745;
     padding: 15px;
@@ -50,16 +50,15 @@ form button:hover {
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: opacity 0.5s ease, transform 0.5s ease;
+    transform: translateY(-10px); 
 }
 
 #message.show {
-    display: block;
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0); 
 }
 
 #message.hide {
     opacity: 0;
-    transform: translateY(-10px);
+    transform: translateY(-10px); 
 }
-
