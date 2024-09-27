@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="csss.css">
+    <link rel="stylesheet" href="StylesAgCursos.css">
+</head>
+<body>
+    <header>
+        <h1>Gestión de Cursos</h1>
+        <nav>
+                <a href="Main.html">Inicio</a>
+                <a href="Cursos.html">Cursos</a>
+                <a href="AgCurso.html">Agregar Curso</a>
+                <a href="#">Contacto</a>
+            
+        </nav>
+    </header>
+    <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Cursos</title>
+</head>
+<body>
+
+    <h1>Agregar un Nuevo Curso</h1>
+    
+    <form id="courseForm">
+        <label for="courseName">Nombre del Curso</label>
+        <input type="text" id="courseName" required>
+
+        <label for="instructorName">Nombre del Instructor</label>
+        <input type="text" id="instructorName" required>
+
+        <label for="startDate">Fecha de Inicio</label>
+        <input type="date" id="startDate" required>
+
+        <label for="duration">Duración (semanas)</label>
+        <input type="number" id="duration" required>
+
+        <label for="description">Descripción</label>
+        <textarea id="description" required></textarea>
+
+        <button type="submit">Agregar Curso</button>
+    </form>
+
+    <h2>Cursos Disponibles</h2>
+    <div class="courses-list" id="coursesList"></div>
+
+    <script>
+        // Cargar cursos desde localStorage al iniciar
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedCourses = JSON.parse(localStorage.getItem('courses')) || [];
+            savedCourses.forEach(course => addCourseToList(course));
+        });
+
+        // Referencias al formulario y la lista de cursos
+        const form = document.getElementById('courseForm');
+        const coursesList = document.getElementById('coursesList');
+
+        // Manejador de evento para el formulario
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Obtener los valores del formulario
+            const courseName = document.getElementById('courseName').value;
+            const instructorName = document.getElementById('instructorName').value;
+            const startDate = document.getElementById('startDate').value;
+            const duration = document.getElementById('duration').value;
+            const description = document.getElementById('description').value;
+
+            // Validación simple
+            if (!courseName || !instructorName || !startDate || !duration || !description) {
+                alert('Por favor, complete todos los campos.');
+                return;
+            }
+
+            // Crear un objeto de curso
+            const newCourse = {
+                courseName,
+                instructorName,
+                startDate,
+                duration,
+                description
+            };
+
+            // Guardar el curso en localStorage
+            let courses = JSON.parse(localStorage.getItem('courses')) || [];
+            courses.push(newCourse);
+            localStorage.setItem('courses', JSON.stringify(courses));
+
+            // Agregar el curso a la lista visual
+            addCourseToList(newCourse);
+
+            // Limpiar el formulario
+            form.reset();
+        });
+
+        // Función para agregar un curso a la lista visualmente
+        function addCourseToList(course) {
+            const courseItem = document.createElement('div');
+            courseItem.classList.add('course-item');
+            courseItem.innerHTML = `
+                <h3>${course.courseName}</h3>
+                <p><strong>Instructor:</strong> ${course.instructorName}</p>
+                <p><strong>Fecha de Inicio:</strong> ${course.startDate}</p>
+                <p><strong>Duración:</strong> ${course.duration} semanas</p>
+                <p><strong>Descripción:</strong> ${course.description}</p>
+            `;
+            coursesList.appendChild(courseItem);
+        }
+    </script>
+
+</body>
+</html>
+
+</html>
